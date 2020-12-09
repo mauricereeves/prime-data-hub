@@ -104,6 +104,13 @@ data class Element(
     }
 
     fun extendFrom(baseElement: Element): Element {
+        // generate the doc string
+        val docString = if (this.documentation?.isNotEmpty() == true) {
+            "${this.documentation} ${baseElement.documentation}"
+        } else {
+            baseElement.documentation
+        }
+
         return Element(
             name = this.name,
             type = this.type ?: baseElement.type,
@@ -119,7 +126,7 @@ data class Element(
             natFlatFileField = this.natFlatFileField ?: baseElement.natFlatFileField,
             hl7Field = this.hl7Field ?: baseElement.hl7Field,
             hl7OutputFields = this.hl7OutputFields ?: baseElement.hl7OutputFields,
-            documentation = this.documentation ?: baseElement.documentation,
+            documentation = docString,
             csvFields = this.csvFields ?: baseElement.csvFields,
         )
     }

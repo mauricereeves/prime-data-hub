@@ -364,6 +364,7 @@ elements:
     natFlatFileField: Patient_last_name
     hhsGuidanceField: 'Patient name '
     hl7Field: PID-5-1
+    documentation: The last name of the patient.
 
   - name: patient_location
     type: TEXT

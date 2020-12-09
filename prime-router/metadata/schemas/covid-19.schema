@@ -24,6 +24,8 @@ elements:
     natFlatFileField: Comments
     hhsGuidanceField:
     hl7Field: # NTE-3
+    documentation: |
+        A free-form block of text to provide additional context or information about this data.
 
   - name: date_result_released
     type: DATETIME
